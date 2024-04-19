@@ -1,0 +1,15 @@
+{
+    "name": "php/projetop1",
+    "description": "Projeto para a prova de eletiva web",
+    "autoload": {
+        "psr-4": {
+            "Php\\Projetop1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Luís Felipe O. Francisco"
+        }
+    ],
+    "require": {}
+}
