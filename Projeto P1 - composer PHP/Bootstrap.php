@@ -19,6 +19,36 @@ $r->post(
 );
 
 $r->get(
+  '/aluno',
+  'Php\Projetop1\controllers\AlunoController@index'
+);
+
+$r->get(
+  '/aluno/{acao}/{status}',
+  'Php\Projetop1\controllers\AlunoController@index'
+);
+
+$r->get(
+  '/aluno/alterar/id/{id}',
+  'Php\Projetop1\controllers\AlunoController@alterar'
+);
+
+$r->post(
+  '/aluno/editar',
+  'Php\Projetop1\controllers\AlunoController@editar'
+);
+
+$r->get(
+  '/aluno/excluir/id/{id}',
+  'Php\Projetop1\controllers\AlunoController@excluir'
+);
+
+$r->post(
+  '/aluno/deletar',
+  'Php\Projetop1\controllers\AlunoController@deletar'
+);
+
+$r->get(
   '/professor/inserir',
   'Php\Projetop1\controllers\ProfessorController@inserir'
 );
@@ -26,6 +56,36 @@ $r->get(
 $r->post(
   '/professor/novo',
   'Php\Projetop1\controllers\ProfessorController@novo'
+);
+
+$r->get(
+  '/professor',
+  'Php\Projetop1\controllers\ProfessorController@index'
+);
+
+$r->get(
+  '/professor/{acao}/{status}',
+  'Php\Projetop1\controllers\ProfessorController@index'
+);
+
+$r->get(
+  '/professor/alterar/id/{id}',
+  'Php\Projetop1\controllers\ProfessorController@alterar'
+);
+
+$r->post(
+  '/professor/editar',
+  'Php\Projetop1\controllers\ProfessorController@editar'
+);
+
+$r->get(
+  '/professor/excluir/id/{id}',
+  'Php\Projetop1\controllers\ProfessorController@excluir'
+);
+
+$r->post(
+  '/professor/deletar',
+  'Php\Projetop1\controllers\ProfessorController@deletar'
 );
 
 $r->get(
@@ -50,17 +110,17 @@ $r->post(
 
 $resultado = $r->handler();
 
-if(!$resultado){
-    http_response_code(404);
-    echo "Página não encontrada!";
-    die();
+if (!$resultado) {
+  http_response_code(404);
+  echo "Página não encontrada!";
+  die();
 }
 
-if ($resultado instanceof Closure){
-    echo $resultado($r->getParams());
-} elseif (is_string($resultado)){
-    $resultado = explode("@", $resultado);
-    $controller = new $resultado[0];
-    $resultado = $resultado[1];
-    echo $controller->$resultado($r->getParams());
+if ($resultado instanceof Closure) {
+  echo $resultado($r->getParams());
+} elseif (is_string($resultado)) {
+  $resultado = explode("@", $resultado);
+  $controller = new $resultado[0];
+  $resultado = $resultado[1];
+  echo $controller->$resultado($r->getParams());
 }

@@ -45,4 +45,42 @@ private Connection $connection;
         }
     }
 
+    public function consultarID($idAluno){
+        try{
+            $sql = "SELECT * FROM aluno WHERE idAluno = :idAluno";
+            $p = $this->connection->getConnection()->prepare($sql);
+            $p->bindValue(":idAluno", $idAluno);
+            $p->execute();
+            return $p->fetch();
+        } catch(\Exception $e){
+            return 0;
+        }
+    }
+
+    public function alterar(Aluno $aluno){
+        try{
+            $sql = "UPDATE aluno SET nome = :nome, telefone = :telefone, email = :email, idTurma = :idTurma
+                    WHERE idAluno = :idAluno";
+            $p = $this->connection->getConnection()->prepare($sql);
+            $p->bindValue(":nome", $aluno->getNome());
+            $p->bindValue(":telefone", $aluno->getTelefone());
+            $p->bindValue(":email", $aluno->getEmail());
+            $p->bindValue(":idTurma", $aluno->getIdTurma());
+            $p->bindValue(":idAluno", $aluno->getIdAluno());
+            return $p->execute();
+        }catch(\Exception $e){
+            return 0;
+        }
+    }
+
+    public function excluir($idAluno){
+        try{
+            $sql = "DELETE FROM aluno WHERE idAluno = :idAluno";
+            $p = $this->connection->getConnection()->prepare($sql);
+            $p->bindValue(":idAluno", $idAluno);
+            return $p->execute();
+        } catch(\Exception $e){
+            return 0;
+        }
+    }
 }
