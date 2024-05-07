@@ -15,9 +15,12 @@ private Connection $connection;
 
     public function inserir(Turma $turma){
         try{
-            $sql = "INSERT INTO turma (idCurso) VALUES (:idCurso)";
+            $sql = "INSERT INTO turma (idCurso, numeroTurma, dataInicio, dataFim) VALUES (:idCurso, :numeroTurma,:dataInicio, :dataFim)";
             $p = $this->connection->getConnection()->prepare($sql);
             $p->bindValue(":idCurso", $turma->getId_curso());  
+            $p->bindValue(":numeroTurma", $turma->getNumeroTurma());  
+            $p->bindValue(":dataInicio", $turma->getDataInicio());  
+            $p->bindValue(":dataFim", $turma->getDataFIm());  
             return $p->execute();
         } catch(\Exception $e){
             return 0;

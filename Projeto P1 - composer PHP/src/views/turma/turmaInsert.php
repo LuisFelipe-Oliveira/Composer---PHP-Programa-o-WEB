@@ -15,6 +15,18 @@
                     <label for="id_curso" class="form-label">ID do curso:</label>
                     <input type="text" name="id_curso" class="form-control" required>
                 </div>
+                <div class="col-8 mt-4">
+                    <label for="numeroTurma" class="form-label">Numero da turma:</label>
+                    <input type="text" name="numeroTurma" class="form-control" required>
+                </div>
+                <div class="col-8 mt-4">
+                    <label for="dataInicio" class="form-label">Data inicial da turma:</label>
+                    <input type="date" name="dataInicio" class="form-control" required>
+                </div>
+                <div class="col-8 mt-4">
+                    <label for="dataFim" class="form-label">Data final da turma:</label>
+                    <input type="date" name="dataFim" class="form-control" required>
+                </div>
             </div>
             <div class="row">
                 <div class="col">

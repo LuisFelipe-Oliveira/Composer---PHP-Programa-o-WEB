@@ -16,7 +16,7 @@ class TurmaController
 
   public function novo($params)
   {
-    $turma = new Turma(0, $_POST['id_curso']);
+    $turma = new Turma(0, $_POST['id_curso'], $_POST['numeroTurma'], $_POST['dataInicio'], $_POST['dataFim']);
     $turmaDAO = new TurmaDAO();
     if ($turmaDAO->inserir($turma)) {
       return "Inserido com sucesso!";

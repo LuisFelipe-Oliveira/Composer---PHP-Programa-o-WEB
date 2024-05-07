@@ -73,6 +73,9 @@ CREATE TABLE `professor` (
 
 CREATE TABLE `turma` (
   `idTurma` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  `numeroTurma` int(11) NOT NULL,
+  `dataInicio` DATE NOT NULL,
+  `dataFim` DATE NOT NULL,
   `idCurso` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
