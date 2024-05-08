@@ -108,6 +108,37 @@ $r->post(
   'Php\Projetop1\controllers\TurmaController@novo'
 );
 
+$r->get(
+  '/turma',
+  'Php\Projetop1\controllers\TurmaController@index'
+);
+
+$r->get(
+  '/turma/{acao}/{status}',
+  'Php\Projetop1\controllers\TurmaController@index'
+);
+
+$r->get(
+  '/turma/alterar/id/{id}',
+  'Php\Projetop1\controllers\TurmaController@alterar'
+);
+
+$r->post(
+  '/turma/editar',
+  'Php\Projetop1\controllers\TurmaController@editar'
+);
+
+$r->get(
+  '/turma/excluir/id/{id}',
+  'Php\Projetop1\controllers\TurmaController@excluir'
+);
+
+$r->post(
+  '/turma/deletar',
+  'Php\Projetop1\controllers\TurmaController@deletar'
+);
+
+
 $resultado = $r->handler();
 
 if (!$resultado) {

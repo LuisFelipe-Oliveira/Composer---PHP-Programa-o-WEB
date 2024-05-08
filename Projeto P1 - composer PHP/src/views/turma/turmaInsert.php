@@ -12,8 +12,8 @@
         <form action="/turma/novo" method="post">
             <div class="row">
                 <div class="col-8 mt-4">
-                    <label for="id_curso" class="form-label">ID do curso:</label>
-                    <input type="text" name="id_curso" class="form-control" required>
+                    <label for="idCurso" class="form-label">ID do curso:</label>
+                    <input type="text" name="idCurso" class="form-control" required>
                 </div>
                 <div class="col-8 mt-4">
                     <label for="numeroTurma" class="form-label">Numero da turma:</label>

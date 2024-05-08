@@ -5,14 +5,14 @@ namespace Php\Projetop1\Models\Domain;
 class Turma{
 
     private $id;
-    private $id_curso;
+    private $idCurso;
     private $numeroTurma;
     private $dataInicio;
     private $dataFim;
 
-    public function __construct($id, $id_curso, $numeroTurma, $dataInicio, $dataFim){
+    public function __construct($id, $idCurso, $numeroTurma, $dataInicio, $dataFim){
         $this->setId($id);
-        $this->setId_curso($id_curso);
+        $this->setId_curso($idCurso);
         $this->setNumeroTurma($numeroTurma);
         $this->setDataInicio($dataInicio);
         $this->setDataFim($dataFim);
@@ -27,11 +27,11 @@ class Turma{
     }
 
     public function getId_curso(){
-        return $this->id_curso;
+        return $this->idCurso;
     }
 
-    public function setId_curso($id_curso){
-        $this->id_curso = $id_curso;
+    public function setId_curso($idCurso){
+        $this->idCurso = $idCurso;
     }
 
     public function getNumeroTurma(){

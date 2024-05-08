@@ -71,6 +71,7 @@ CREATE TABLE `professor` (
 -- Estrutura da tabela `turma`
 --
 
+
 CREATE TABLE `turma` (
   `idTurma` int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `numeroTurma` int(11) NOT NULL,
