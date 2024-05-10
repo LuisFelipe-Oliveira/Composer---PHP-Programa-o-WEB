@@ -27,8 +27,8 @@
           <input type="text" name="email" class="form-control" required>
         </div>
         <div class="col-8 mt-4">
-          <label for="id_turma" class="form-label">ID da turma:</label>
-          <input type="number" name="id_turma" class="form-control" required>
+          <label for="idTurma" class="form-label">ID da turma:</label>
+          <input type="number" name="idTurma" class="form-control" required>
         </div>
       </div>
       <div class="row">

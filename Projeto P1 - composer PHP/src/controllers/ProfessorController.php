@@ -39,7 +39,7 @@ class ProfessorController
 
     public function novo($params)
     {
-        $professor = new Professor(0, $_POST['nome'], $_POST['telefone'], $_POST['email'], $_POST['id_turma'], );
+        $professor = new Professor(0, $_POST['nome'], $_POST['telefone'], $_POST['email'], $_POST['idTurma'], );
         $professorDAO = new ProfessorDAO();
         if ($professorDAO->inserir($professor)) {
             header("location: /professor/inserir/true");

@@ -99,6 +99,36 @@ $r->post(
 );
 
 $r->get(
+  '/curso',
+  'Php\Projetop1\controllers\CursoController@index'
+);
+
+$r->get(
+  '/curso/{acao}/{status}',
+  'Php\Projetop1\controllers\CursoController@index'
+);
+
+$r->get(
+  '/curso/alterar/id/{id}',
+  'Php\Projetop1\controllers\CursoController@alterar'
+);
+
+$r->post(
+  '/curso/editar',
+  'Php\Projetop1\controllers\CursoController@editar'
+);
+
+$r->get(
+  '/curso/excluir/id/{id}',
+  'Php\Projetop1\controllers\CursoController@excluir'
+);
+
+$r->post(
+  '/curso/deletar',
+  'Php\Projetop1\controllers\CursoController@deletar'
+);
+
+$r->get(
   '/turma/inserir',
   'Php\Projetop1\controllers\TurmaController@inserir'
 );
